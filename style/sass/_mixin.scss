@@ -1,0 +1,22 @@
+@mixin col($align: top){
+  display: inline-block;
+  vertical-align: $align;
+}
+
+@mixin transition($duration: 0.25s, $properties: all){
+  transition: $duration $properties;
+  -webkit-transition: $duration $properties;
+}
+
+@mixin centered($top: 50%){
+  z-index: 1;
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transform: translate3d(-50%,-$top,0);
+  -webkit-transform: translate3d(-50%,-$top,0);
+}
+
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue / 16 + rem;
+}

@@ -1,0 +1,62 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: $width-lg;
+  margin: 0 auto;
+  position: relative;
+}
+.wrapper-all{
+ width: 100%;
+  overflow: hidden;
+  min-width: $width-lg;
+}
+*{
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, p, a, img, ul, li{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+}
+header, section, footer{
+  width: 100%;
+  min-width: $width-lg;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+button,
+input{
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 0;
+}
+
+button{
+  cursor: pointer;
+}
+
+.col{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-m{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.input{
+  &_error{
+
+  }
+}

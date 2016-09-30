@@ -1,0 +1,132 @@
+@mixin flex-between($resolution, $vAlign:center, $hAlign:center){
+  @media (min-width: $resolution){
+    @include flex-box;
+    @include justify-content($vAlign);
+    @include align-items($hAlign);
+
+    &_top{
+      @include flex-box;
+      @include justify-content($vAlign);
+      @include align-items(start);
+    }
+
+    &_bottom{
+      @include flex-box;
+      @include justify-content($vAlign);
+      @include align-items(end);
+    }
+  }
+}
+
+@mixin block($resolution){
+  @media (max-width: $resolution){
+    &-center{
+      margin: 0 auto 0 auto;
+      display: block;
+    }
+    &-left{
+      margin: 0 0 0 0;
+      display: block;
+    }
+    &-right{
+      margin: 0 0 0 auto;
+      display: block;
+    }
+  }
+}
+
+.flex{
+  &_between{
+    &-md{
+      @include flex-between($width-md, space-between);
+    }
+    &-sm{
+      @include flex-between($width-sm, space-between);
+    }
+    &-xs{
+      @include flex-between($width-xs, space-between);
+    }
+    &-min{
+      @include flex-between($width-min, space-between);
+    }
+  }
+}
+
+.flex{
+  &_around{
+    &-md{
+      @include flex-between($width-md, space-around);
+    }
+    &-sm{
+      @include flex-between($width-sm, space-around);
+    }
+    &-xs{
+      @include flex-between($width-xs, space-around);
+    }
+    &-min{
+      @include flex-between($width-min, space-around);
+    }
+  }
+}
+
+.flex{
+  &_start{
+    &-md{
+      @include flex-between($width-md, start);
+    }
+    &-sm{
+      @include flex-between($width-sm, start);
+    }
+    &-xs{
+      @include flex-between($width-xs, start);
+    }
+    &-min{
+      @include flex-between($width-min, start);
+    }
+  }
+}
+
+.flex{
+  &_end{
+    &-md{
+      @include flex-between($width-md, end);
+    }
+    &-sm{
+      @include flex-between($width-sm, end);
+    }
+    &-xs{
+      @include flex-between($width-xs, end);
+    }
+    &-min{
+      @include flex-between($width-min, end);
+    }
+  }
+}
+
+.block{
+  &-center{
+    margin: 0 auto 0 auto;
+    display: block;
+  }
+  &-left{
+    margin: 0 0 0 0;
+    display: block;
+  }
+  &-right{
+    margin: 0 0 0 auto;
+    display: block;
+  }
+
+  &_md{
+    @include block($width-md);
+  }
+  &_sm{
+    @include block($width-sm);
+  }
+  &_xs{
+    @include block($width-xs);
+  }
+  &_min{
+    @include block($width-min);
+  }
+}
